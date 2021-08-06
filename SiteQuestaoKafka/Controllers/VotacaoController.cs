@@ -41,7 +41,7 @@ namespace SiteQuestaoKafka.Controllers
         {
             _logger.LogInformation($"Processando voto para a tecnologia: {tecnologia}");
             await _producer.Send(tecnologia);
-            _logger.LogInformation($"Informações sobre o voto '{tecnologia}' enviadas para o Azure Event Hubs!");
+            _logger.LogInformation($"Informações sobre o voto '{tecnologia}' enviadas para o Apache Kafka!");
 
             TempData["Voto"] = tecnologia;
             return RedirectToAction("Index", "Home");
